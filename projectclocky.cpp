@@ -1,5 +1,5 @@
 #include <iostream>
-#include <time.h> //Clock
+#include <time.h>  // Clock
 #include <stdio.h> // For rand() function
 #include <stdlib.h>
 using namespace std;
@@ -89,7 +89,7 @@ void quicksort(int A[] , int left , int right){
 		quicksort(A , middle+1 , right);
 	}
 }
-// End of Binary Saerch
+// End of Quick Sort
 
 // Code Haye Binary Search
 // Big O = logn
@@ -133,7 +133,9 @@ int main()
     //arrays:
     int aSize= 100, bSize = 1000, cSize=5000, dSize = 10000, eSize = 20000;
     int A[aSize], B[bSize], C[cSize],D[dSize], E[eSize];
-
+    //Araye ba size koochek tar baraye estefade dar quick sort:
+    int qaSize= 50, qbSize = 250, qcSize=500, qdSize = 1000, qeSize = 2000;
+    int qA[qaSize], qB[qbSize], qC[qcSize],qD[qdSize], qE[qeSize];
     //Meghdar Dadane Araye ha
 
     for(int i = 0; i < aSize ; i++)
@@ -156,6 +158,26 @@ int main()
     {
         E[i] = rand() % eSize + 1;
     }
+    for(int i = 0; i < qaSize ; i++)
+    {
+        qA[i] = rand() % qaSize + 1;
+    }
+    for (int i = 0; i<qbSize;i++)
+    {
+        qB[i] = rand() % qbSize + 1;
+    }
+    for (int i = 0; i<qcSize;i++)
+    {
+        qC[i] = rand() % qcSize + 1;
+    }
+    for (int i = 0; i<qdSize;i++)
+    {
+        qD[i] = rand() % qdSize + 1;
+    }
+    for (int i = 0; i<qeSize;i++)
+    {
+        qE[i] = rand() % qeSize + 1;
+    }
 
 
 
@@ -170,7 +192,7 @@ int main()
 
 
 
-    //linearsearch:
+    //linearsearch n:
     cout<<"Linear Search:"<<endl;
     //A:
     clock_t lsAtimer = clock();
@@ -202,7 +224,7 @@ int main()
 
 
 
-    //Bubble Sort:
+    //Bubble Sort n^2:
     cout<<"Bubble Sort:"<<endl;
     //A:
     clock_t bsortAtimer = clock();
@@ -233,7 +255,7 @@ int main()
 
 
 
-    //Hanoi:
+    //Hanoi 2^n:
     cout<<"Hanoi Tower Problem:"<<endl;
     //3 Disks:
     clock_t htimer3 = clock();
@@ -263,17 +285,54 @@ int main()
     //End of Hanoi Tower Problem
 
 
+//Quick Sort nlogn
+    //A:
+    cout<<"Quick Sort:"<<endl;
+    clock_t qsAtimer = clock();
+    quicksort(qA, 0, qaSize);
+    cout<<"CPU Time for n = "<< qaSize<<" is:"
+    <<clock() - qsAtimer/CLOCKS_PER_SEC<<endl;
+    //B:
+    clock_t qsBtimer = clock();
+    quicksort(qB, 0, qbSize);
+    cout<<"CPU Time for n = "<< qbSize<<" is:"
+    <<clock() - qsBtimer/CLOCKS_PER_SEC<<endl;
+    //C:
+    clock_t qsCtimer = clock();
+    quicksort(qC, 0, qcSize);
+    cout<<"CPU Time for n = "<< qcSize<<" is:"
+    <<clock() - qsCtimer/CLOCKS_PER_SEC<<endl;
+    //D:
+    clock_t qsDtimer = clock();
+    quicksort(qD, 0, qdSize);
+    cout<<"CPU Time for n = "<< qdSize<<" is:"
+    <<clock() - qsDtimer/CLOCKS_PER_SEC<<endl;
+    //E:
+    clock_t qsEtimer = clock();
+    quicksort(qE, 0, qeSize);
+    cout<<"CPU Time for n = "<< qeSize<<" is:"
+    <<clock() - qsEtimer/CLOCKS_PER_SEC<<endl;
+    //End of Quick Sort
 
 
 
-/*
+
+
     //Binary search logn
+
     //buble sorting the arrays:
+    /*
     bubbleSort(A, aSize);
     bubbleSort(B, bSize);
     bubbleSort(C, cSize);
     bubbleSort(D, dSize);
     bubbleSort(E, eSize);
+    */
+    quicksort(A, 0, aSize);
+    quicksort(B, 0, bSize);
+    quicksort(C, 0, cSize);
+    quicksort(D, 0, dSize);
+    quicksort(E, 0, eSize);
     //A:
     clock_t aTimer = clock();
     binarySearch(A, aSize, aKey);
@@ -300,12 +359,7 @@ int main()
     cout<<" CPU time for n = "<<eSize<<" is: "
     <<clock()-eTimer/CLOCKS_PER_SEC<<endl;
     //End of Binary Search
-*/
 
-
-
-    //Quick Sort:
-    cout<<"Quick Sort:"<<endl;
 
 
     cout<<"\nWorks Perfectly so far";
