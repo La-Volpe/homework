@@ -1,7 +1,6 @@
 #include <iostream>
-#include <time.h>  // Clock
-#include <stdio.h> // For rand() function
-#include <stdlib.h>
+#include <time.h>  // Clock, time va...
+#include <stdlib.h> // baraye functione rand()
 using namespace std;
 // Code haye Algorithme Linear Search:
 // Big O = n
@@ -100,10 +99,9 @@ void quicksort(int A[] , int left , int right){
 bool binarySearch(int AR[], int N, int VAL)
 {
     /*
-    Technically a binary search should be done only if the array
-    is sorted. But since we don't want to calculate the time that
-    sorting cosumes, we ignore this part and will do it once we're
-    in the main() function.
+    Az nazare fanni, binary search bayad faghat vaghti soorat begire
+    ke araye sort shode bashe. vali chon ma nemikhaym zamane ejraye 
+    algorithme sort dar inja mohasebe beshe, sort kardan ro mibarim too main()
     */
     //bubbleSort(A,element_number);
 	int Mid,Lbound=0,Ubound=N-1;
@@ -178,7 +176,7 @@ int main()
 
 
 
-    //key Generator for Binary & linear Search:
+    //toolid konnandeye key baraye  Binary & linear Search:
     int aKey = rand() % aSize +1;
     int bKey = rand() % bSize +1;
     int cKey = rand() % cSize +1;
@@ -321,7 +319,7 @@ int main()
 
     //Binary search logn
 
-    //buble sorting the arrays:
+    //Sort kardane Araye ha:
 
     bubbleSort(A, aSize);
     bubbleSort(B, bSize);
