@@ -95,10 +95,10 @@ void quicksort(int A[] , int left , int right){
 // Big O = logn
 // Start
 
-bool binarySearch(int A[], int element_number, int key)
-{
 
-    int low, mid, high;
+
+bool binarySearch(int AR[], int N, int VAL)
+{
     /*
     Technically a binary search should be done only if the array
     is sorted. But since we don't want to calculate the time that
@@ -106,22 +106,18 @@ bool binarySearch(int A[], int element_number, int key)
     in the main() function.
     */
     //bubbleSort(A,element_number);
-    low = 0;
-    high = element_number;
-    do
-    {
-        mid = (low + high) / 2;
-        if(key<A[mid])
-            high = mid - 1;
-        else if (key > A[high])
-            low = mid + 1;
-    }
-    while (key != A[mid] && low <=high);
-
-    if(key == A[mid])
-        return true;
-    return false;
-
+	int Mid,Lbound=0,Ubound=N-1;
+	while(Lbound<=Ubound)
+	{
+		Mid=(Lbound+Ubound)/2;
+		if(VAL>AR[Mid])
+			Lbound=Mid+1;
+		else if(VAL<AR[Mid])
+			Ubound=Mid-1;
+		else
+			return true;
+	}
+	return false;
 }
 
 // End of Binary Search
@@ -188,6 +184,11 @@ int main()
     int cKey = rand() % cSize +1;
     int dKey = rand() % dSize +1;
     int eKey = rand() % eSize +1;
+    int qaKey = rand() % qaSize +1;
+    int qbKey = rand() % qbSize +1;
+    int qcKey = rand() % qcSize +1;
+    int qdKey = rand() % qdSize +1;
+    int qeKey = rand() % qeSize +1;
 
 
 
@@ -321,47 +322,43 @@ int main()
     //Binary search logn
 
     //buble sorting the arrays:
-    /*
+
     bubbleSort(A, aSize);
     bubbleSort(B, bSize);
     bubbleSort(C, cSize);
     bubbleSort(D, dSize);
     bubbleSort(E, eSize);
-    */
-    quicksort(A, 0, aSize);
-    quicksort(B, 0, bSize);
-    quicksort(C, 0, cSize);
-    quicksort(D, 0, dSize);
-    quicksort(E, 0, eSize);
+
+    cout<<"Binary Search:"<<endl;
     //A:
     clock_t aTimer = clock();
     binarySearch(A, aSize, aKey);
-    cout<<" CPU time for n = "<<aSize<<" is: "
+    cout<<"CPU time for n = "<<aSize<<" is: "
     <<clock() - aTimer/CLOCKS_PER_SEC<<endl;
     //B:
     clock_t bTimer = clock();
     binarySearch(B, bSize, bKey);
-    cout<<" CPU time for n = "<<bSize<<" is: "
+    cout<<"CPU time for n = "<<bSize<<" is: "
     <<clock()- bTimer/CLOCKS_PER_SEC<<endl;
     //C:
     clock_t cTimer = clock();
     binarySearch(C, cSize, cKey);
-    cout<<" CPU time for n = "<<cSize<<" is: "
+    cout<<"CPU time for n = "<<cSize<<" is: "
     <<clock()- cTimer/CLOCKS_PER_SEC<<endl;
     //D:
     clock_t dTimer = clock();
     binarySearch(D, dSize, dKey);
-    cout<<" CPU time for n = "<<dSize<<" is: "
+    cout<<"CPU time for n = "<<dSize<<" is: "
     <<clock()-dTimer/CLOCKS_PER_SEC<<endl;
     //E:
     clock_t eTimer = clock();
     binarySearch(E, eSize, eKey);
-    cout<<" CPU time for n = "<<eSize<<" is: "
+    cout<<"CPU time for n = "<<eSize<<" is: "
     <<clock()-eTimer/CLOCKS_PER_SEC<<endl;
     //End of Binary Search
 
 
 
-    cout<<"\nWorks Perfectly so far";
+    cout<<"\nWorks Perfectly";
     return 0;
 }
