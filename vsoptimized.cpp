@@ -1,4 +1,4 @@
-#include "stdafx"
+#include "stdafx.h"
 #include <iostream>
 #include <time.h>  // Clock, time va...
 #include <stdlib.h> // baraye functione rand()
