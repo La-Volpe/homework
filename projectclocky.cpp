@@ -100,7 +100,7 @@ bool binarySearch(int AR[], int N, int VAL)
 {
     /*
     Az nazare fanni, binary search bayad faghat vaghti soorat begire
-    ke araye sort shode bashe. vali chon ma nemikhaym zamane ejraye 
+    ke araye sort shode bashe. vali chon ma nemikhaym zamane ejraye
     algorithme sort dar inja mohasebe beshe, sort kardan ro mibarim too main()
     */
     //bubbleSort(A,element_number);
@@ -345,13 +345,13 @@ int main()
     <<clock()- cTimer/CLOCKS_PER_SEC<<endl;
     //D:
     clock_t dTimer = clock();
-    binarySearch(D, dSize, dKey);
-    cout<<"CPU time for n = "<<dSize<<" is: "
+    binarySearch(D, 20000, dKey);
+    cout<<"CPU time for n = "<<20000<<" is: "
     <<clock()-dTimer/CLOCKS_PER_SEC<<endl;
     //E:
     clock_t eTimer = clock();
-    binarySearch(E, eSize, eKey);
-    cout<<"CPU time for n = "<<eSize<<" is: "
+    binarySearch(E, 40000, eKey);
+    cout<<"CPU time for n = "<<40000<<" is: "
     <<clock()-eTimer/CLOCKS_PER_SEC<<endl;
     //End of Binary Search
 
